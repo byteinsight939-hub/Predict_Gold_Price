@@ -1,58 +1,67 @@
-# 🟡 Gold Stock Price Prediction 📊
+# 🟡 Gold Price Prediction 
 
-This project predicts gold prices using machine learning (Random Forest) based on historical data from Yahoo Finance. It also includes user login/register features with SQLite and visualizes both historical and future price trends using `matplotlib`.
-
----
-
-## 🚀 Features
-
-- 📅 Fetches real gold data (`GC=F`) using `yfinance`
-- 🧠 Trains a Random Forest model to predict prices
-- 📈 Plots actual vs predicted prices (historical & future)
-- 🔐 SQLite-based login & register system
-- 📊 Saves prediction graphs for dashboard and README use
+This project is a **machine learning-powered** that predicts future gold prices using historical data and visualizes trends using an interactive interface built with **Dash and Plotly**. Users can log in, select date ranges, and get both historical and future price predictions for gold.
 
 ---
 
-## 📷 Example Outputs
+## 📊 Features
 
-### 🔹 Historical vs Predicted Prices (Test Data)
-![Historical Prediction](images/historical_prediction.png)
-
-### 🔹 Future Gold Price Prediction (2025)
-![Future Prediction](images/future_prediction.png)
-
----
-
-## ⚙️ Tech Stack
-
-- Python 🐍
-- yfinance 📉
-- scikit-learn 🤖
-- pandas & matplotlib 📊
-- SQLite 🛢️
+- 🔐 **User Authentication**: Register and login functionality using SQLite.
+- 📈 **Historical Analysis**: Visualize gold price trends from Yahoo Finance.
+- 🔮 **Future Forecasting**: Predict gold prices using a trained **Random Forest Regressor**.
+- 📅 **Date Selection**: Choose custom date ranges for analysis.
+- 📉 **Moving Average Smoothing**: Clean and smooth price trends.
+- 📊 **Interactive Graphs**: Built with Plotly for better insights.
 
 ---
 
-## 🏁 How to Run
+## ⚙️ Technologies Used
 
-1. **Clone the repo**:
-   ```bash
-   git clone https://github.com/your-username/gold-stock-prediction.git
-   cd gold-stock-prediction
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   pip install yfinance pandas matplotlib scikit-learn
-   ```
-
-3. **Run the main script**:
-   ```bash
-   python gold.py
-   ```
-
-
+| Layer | Tools |
+|------|-------|
+| Frontend | Dash, Plotly |
+| Backend | Python, Flask (via Dash), SQLite |
+| ML Model | RandomForestRegressor (Scikit-Learn) |
+| Data Source | [Yahoo Finance](https://finance.yahoo.com/) |
+| Deployment Ready | ✅ Flask-compatible `server` object |
 
 ---
+
+## 🚀 How to Run
+
+### 🔧 Install Requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+### ▶️ Run the App
+
+```bash
+python app.py
+```
+
+## 📁 Project Structure
+
+```
+📦 gold-price-prediction
+├── app.py                # Main Dash + ML code
+├── users.db              # SQLite database for auth
+├── README.md             # You are here!
+├── images/               # Screenshots for README
+└── ...
+```
+
+---
+
+## 📌 Notes
+
+- The model uses **day, month, year, and 7-day moving average** for predictions.
+- Yahoo Finance gold ticker used: `'GC=F'`.
+- You can switch to other tickers (like stock prices or ETFs) with minor changes.
+- Works best with a consistent internet connection (for live data fetching).
+
+---
+
+
 
